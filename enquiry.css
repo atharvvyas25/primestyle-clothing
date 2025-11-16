@@ -1,0 +1,117 @@
+:root {
+  --accent: #e5c16f;
+  --text-dark: #333;
+  --bg-light: #fafafa;
+  --border: #e6e6e6;
+  --white: #fff;
+}
+
+body {
+  margin: 0;
+  font-family: "Inter", sans-serif;
+  background: var(--bg-light);
+  color: var(--text-dark);
+}
+
+.enquiry-header {
+  text-align: center;
+  padding: 60px 20px 20px;
+}
+
+.enquiry-header h1 {
+  font-family: "Montserrat", sans-serif;
+  font-size: 34px;
+  margin: 0 0 10px;
+}
+
+.enquiry-header p {
+  font-size: 16px;
+  opacity: 0.7;
+}
+
+.enquiry-container {
+  max-width: 900px;
+  margin: 30px auto;
+  padding: 20px;
+}
+
+.enquiry-form {
+  background: var(--white);
+  padding: 30px;
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+  border: 1px solid var(--border);
+}
+
+.section-title {
+  margin-top: 30px;
+  font-family: "Montserrat";
+  font-size: 20px;
+  color: var(--accent);
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 18px;
+}
+
+label {
+  margin-bottom: 6px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+input, select, textarea {
+  padding: 12px;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  font-size: 15px;
+  outline: none;
+  transition: 0.2s;
+}
+
+input:focus, select:focus, textarea:focus {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px rgba(229,193,111,0.15);
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 18px;
+}
+
+.submit-btn {
+  width: 100%;
+  background: var(--accent);
+  border: none;
+  padding: 16px;
+  margin-top: 10px;
+  border-radius: 12px;
+  font-size: 16px;
+  font-weight: 700;
+  cursor: pointer;
+  color: #000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  transition: 0.3s;
+}
+
+.submit-btn:hover {
+  opacity: 0.9;
+  transform: translateY(-1px);
+}
+
+@media(max-width:720px){
+  .form-row{
+    grid-template-columns: 1fr;
+  }
+  .enquiry-form{
+    padding: 20px;
+  }
+}
