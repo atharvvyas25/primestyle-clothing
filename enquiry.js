@@ -1,18 +1,17 @@
+const form = document.getElementById("enquiryForm");
 
-document.getElementById("enquiryForm").addEventListener("submit", async function (e) {
+form.addEventListener("submit", async (e) => {
     e.preventDefault();
-    
-    const fileInput = document.getElementById("imageUpload");
-    let imageURL = "No image uploaded";
 
-    if (fileInput.files.length > 0) {
-        imageURL = await uploadToCloudinary(fileInput.files[0]);
+    const fileInput = document.getElementById("imageUpload");
+    const file = fileInput.files[0];
+
+    // Upload to Cloudinary FIRST
+    if (file) {
+        const imageUrl = await uploadToCloudinary(file);
+        document.getElementById("imageUrlInput").value = imageUrl;
     }
 
-    // Put image link in hidden input
-    document.getElementById("imageUrlInput").value = imageURL;
-
-    // Now submit the form
-    e.target.submit();
+    // Netlify ke form ko normally submit kar do
+    form.submit();
 });
-
