@@ -90,16 +90,19 @@
 
     <section class="enquiry-container">
 
-        <form name="order-enquiry" method="POST" data-netlify="true" enctype="multipart/form-data">
+        <form name="order-enquiry" method="POST" data-netlify="true" netlify-honeypot="bot-field"
+            enctype="multipart/form-data">
 
+            <!-- REQUIRED hidden fields -->
             <input type="hidden" name="form-name" value="order-enquiry">
+            <input type="hidden" name="bot-field">
             <input type="hidden" id="imageUrlInput" name="image_url">
-            <input type="hidden" name="redirect" value="/thank-you.html">
+            <input type="hidden" name="redirect" value="https://primestyleclothing.in/thank-you.html">
 
             <!-- ORDER CATEGORY -->
             <div class="form-group">
                 <label><i class="ph ph-list-bullets"></i> Order Category *</label>
-                <select name="Order Category" required>
+                <select name="order_category" required>
                     <option value="" disabled selected>Select one</option>
                     <option>Plain Apparel</option>
                     <option>Custom Brand Apparel</option>
@@ -114,70 +117,66 @@
             <div class="form-row">
                 <div class="form-group">
                     <label><i class="ph ph-t-shirt"></i> Product Type *</label>
-                    <input type="text" name="Product Type" placeholder="Oversized Tee, Hoodie, etc." required>
+                    <input type="text" name="product_type" placeholder="Oversized Tee, Hoodie, etc." required>
                 </div>
 
                 <div class="form-group">
                     <label><i class="ph ph-stack"></i> Quantity *</label>
-                    <input type="number" name="Quantity" placeholder="MOQ 30+" required>
+                    <input type="number" name="quantity" placeholder="MOQ 30+" required>
                 </div>
             </div>
 
             <div class="form-row">
                 <div class="form-group">
                     <label><i class="ph ph-ruler"></i> Sizes</label>
-                    <input type="text" name="Sizes" placeholder="S, M, L, XL">
+                    <input type="text" name="sizes" placeholder="S, M, L, XL">
                 </div>
 
                 <div class="form-group">
                     <label><i class="ph ph-palette"></i> Colors</label>
-                    <input type="text" name="Colors" placeholder="Black, White, etc.">
+                    <input type="text" name="colors" placeholder="Black, White, etc.">
                 </div>
             </div>
 
             <div class="form-row">
                 <div class="form-group">
                     <label><i class="ph ph-fabric"></i> Fabric (Optional)</label>
-                    <input type="text" name="Fabric" placeholder="Cotton, French Terry, Fleece (optional)">
+                    <input type="text" name="fabric" placeholder="Cotton, French Terry, Fleece (optional)">
                 </div>
 
                 <div class="form-group">
                     <label><i class="ph ph-paint-brush"></i> Printing Type (Optional)</label>
-                    <input type="text" name="Printing Type" placeholder="DTF, Screen, Puff, etc.">
+                    <input type="text" name="printing_type" placeholder="DTF, Screen, Puff, etc.">
                 </div>
             </div>
 
             <div class="form-group">
                 <label><i class="ph ph-needle"></i> Embroidery (Optional)</label>
-                <input type="text" name="Embroidery" placeholder="Front chest, back, etc.">
+                <input type="text" name="embroidery" placeholder="Front chest, back, etc.">
             </div>
 
             <!-- BRANDING -->
             <div class="form-row">
                 <div class="form-group">
                     <label><i class="ph ph-tag"></i> Custom Labels (Optional)</label>
-                    <input type="text" name="Custom Labels" placeholder="Woven label, printed label, etc.">
+                    <input type="text" name="custom_labels" placeholder="Woven label, printed label, etc.">
                 </div>
 
                 <div class="form-group">
                     <label><i class="ph ph-package"></i> Packaging (Optional)</label>
-                    <input type="text" name="Packaging" placeholder="Polybag, Ziplock, Custom box">
+                    <input type="text" name="packaging" placeholder="Polybag, Ziplock, Custom box">
                 </div>
             </div>
 
-            <!-- REFERNCE -->
+            <!-- REFERENCE IMAGE -->
             <div class="form-group">
                 <label><i class="ph ph-upload"></i> Upload Reference (Optional)</label>
-                <!-- <input type="file" name="Reference File"> -->
-                <input type="file" id="imageUpload" accept="image/*" name="Reference File">
-                <input type="hidden" name="image_url" id="imageUrlInput">
-
-
+                <input type="file" id="imageUpload" accept="image/*" name="reference_file">
             </div>
 
             <div class="form-group">
                 <label><i class="ph ph-note"></i> Additional Notes</label>
-                <textarea name="Additional Notes" rows="4" placeholder="Any extra details..."></textarea>
+                <textarea name="notes" rows="4" placeholder="Any extra details..."></textarea>
             </div>
 
             <!-- CONTACT DETAILS -->
@@ -186,24 +185,24 @@
             <div class="form-row">
                 <div class="form-group">
                     <label><i class="ph ph-user"></i> Name *</label>
-                    <input type="text" name="Name" required>
+                    <input type="text" name="name" required>
                 </div>
 
                 <div class="form-group">
                     <label><i class="ph ph-envelope"></i> Email *</label>
-                    <input type="email" name="Email" required>
+                    <input type="email" name="email" required>
                 </div>
             </div>
 
             <div class="form-row">
                 <div class="form-group">
                     <label><i class="ph ph-phone-call"></i> Phone Number *</label>
-                    <input type="tel" name="Phone" required>
+                    <input type="tel" name="phone" required>
                 </div>
 
                 <div class="form-group">
                     <label><i class="ph ph-whatsapp-logo"></i> WhatsApp (Optional)</label>
-                    <input type="tel" name="WhatsApp">
+                    <input type="tel" name="whatsapp">
                 </div>
             </div>
 
@@ -213,6 +212,7 @@
             </button>
 
         </form>
+
     </section>
     <script src="enquiry.js"></script>
 
